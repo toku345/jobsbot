@@ -9,6 +9,8 @@
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 module.exports = (robot) ->
+  robot.hear /仕事/, (msg) ->
+    msg.send "I’m convinced that the only thing that kept me going was that I loved what I did.\nYou’ve got to find what you love.\nAnd that is as true for your work as it is for your lovers."
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
