@@ -51,13 +51,13 @@ messages = [
 
 module.exports = (robot) ->
   # morning message
-  message = "@toku345: \n#{_.sample messages}"
-  morningMessage = new CronJob '00 00 07 * * *', () =>
-    robot.messageRoom 'general', message, null, true, 'Asia/Tokyo'
-  morningMessage.start()
+  morningMessage = "@toku345: \n#{_.sample messages}"
+  morningMessageJob = new CronJob '00 00 07 * * *', () =>
+    robot.messageRoom 'general', morningMessage, null, true, 'Asia/Tokyo'
+  morningMessageJob.start()
 
   # a bedtime cue
-  message = "@toku345: \nReady yourself for sleep!"
-  bedtimeCue = new CronJob '00 00 23 * * *', () =>
-    robot.messageRoom 'general', message, null, true, 'Asia/Tokyo'
-  bedtimeCue.start()
+  bedtimeMessage = "@toku345: \nReady yourself for sleep!"
+  bedtimeCueJob = new CronJob '00 00 23 * * *', () =>
+    robot.messageRoom 'general', bedtimeMessage, null, true, 'Asia/Tokyo'
+  bedtimeCueJob.start()
